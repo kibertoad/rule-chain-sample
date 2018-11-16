@@ -1,0 +1,48 @@
+{
+  "name": "rule-chain-sample",
+  "version": "1.0.0",
+  "description": "Shipment discount calculation module",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Igor Savin",
+      "email": "iselwin@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "mocha ./test --recursive",
+    "test-coverage": "nyc npm test",
+    "execute": "node scripts/apply-discounts.js",
+    "execute-happy-path": "node scripts/apply-discounts.js input/input_happy.txt",
+    "lint": "eslint .",
+    "prettier": "prettier --write \"{src,test,scripts}/**/*.js"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "prettier": "^1.15.2",
+    "sinon": "^7.1.1"
+  },
+  "nyc": {
+    "description": "test coverage",
+    "include": [
+      "src/**"
+    ],
+    "reporter": [
+      "text"
+    ],
+    "cache": true,
+    "all": true,
+    "check-coverage": true,
+    "lines": 95,
+    "statements": 95,
+    "functions": 95,
+    "branches": 90
+  }
+}
